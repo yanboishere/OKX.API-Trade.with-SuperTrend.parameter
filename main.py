@@ -1,4 +1,3 @@
-# import语句
 import okx.account_api as account
 import okx.futures_api as future
 import numpy as np
@@ -13,14 +12,6 @@ passphrase = 'YOUR_PASSPHRASE'  # 填写您的Passphrase
 account_api = account.AccountAPI(api_key, secret_key, passphrase, True)
 future_api = future.FutureAPI(api_key, secret_key, passphrase, True)
 
-# 超级趋势指标参数设置
-period = 14  # 计算周期
-multiplier = 3  # 价格变化的乘数
-upper_bound = 0  # 上限线初始值
-lower_bound = 0  # 下限线初始值
-buy_signal = False  # 是否发生买入信号
-sell_signal = False  # 是否发生卖出信号
-
 # 获取历史K线数据
 def get_historical_klines(symbol, interval, limit):
     kline_data = future_api.get_kline(symbol=symbol, interval=interval, limit=limit)  # 调用OKX API获取K线数据
@@ -32,7 +23,7 @@ def get_historical_klines(symbol, interval, limit):
     return times, high_prices, low_prices, close_prices  # 返回K线数据
 
 # 计算超级趋势指标的上限线和下限线
-def calculate_super_trend(close_prices, period, multiplier, upper_bound, lower_bound, buy_signal, sell_signal):
+def calculate_super_trend(close_prices, period, multiplier, upper_bound=0, lower_bound=0, buy_signal=False, sell_signal=False):
     atr = talib.ATR(high_prices, low_prices, close_prices, timeperiod=period)  # 使用TA-Lib库计算平均真实范围(ATR)
     up_band = (close_prices[-1] + (multiplier * atr[-1]))  # 计算上限线值
     down_band = (close_prices[-1] - (multiplier * atr[-1]))  # 计算下限线值
@@ -62,7 +53,6 @@ def execute_trade_strategy(symbol, quantity, price, buy_signal, sell_signal):
     else:
         print('没有买卖信号')
     return order_result  # 返回订单结果
-
 # 主程序
 if __name__ == '__main__':
     symbol = 'BTC-USD-210625'  # 合约名称
@@ -70,10 +60,18 @@ if __name__ == '__main__':
     limit = 200  # 返回K线数据的数量
     quantity = '1'  # 下单数量
     stop_loss_pct = 0.05  # 止损百分比
+    period = 14  # 计算周期
+    multiplier = 3  # 价格变化的乘数
+    upper_bound = np.array([0])  # 上限线初始值
+    lower_bound = np.array([0])  # 下限线初始值
+    buy_signal = False  # 是否发生买入信号
+    sell_signal = False  # 是否发生卖出信号
+    
     while True:  # 不断循环执行交易策略
         try:
             times, high_prices, low_prices, close_prices = get_historical_klines(symbol, interval, limit)  # 获取历史K线数据
-            upper_bound, lower_bound, buy_signal, sell_signal = calculate_super_trend(close_prices, period, multiplier, upper_bound, lower_bound, buy_signal, sell_signal)  # 计算超级趋势指标
+            upper_bound, lower_bound, buy_signal, sell_signal = calculate_super_trend(close_prices, period, multiplier,
+                                                                                      upper_bound, lower_bound, buy_signal, sell_signal)  # 计算超级趋势指标
             last_price = float(account_api.get_specific_ticker(product_id=symbol)['last'])  # 获取最新成交价
             order_result = execute_trade_strategy(symbol, quantity, last_price, buy_signal, sell_signal)  # 执行交易策略
             if order_result['code'] == '0':  # 如果订单执行成功
@@ -91,3 +89,4 @@ if __name__ == '__main__':
                 print('当前没有持仓')
         except Exception as e:
             print(f'发生错误: {e}')  # 捕获并输出异常信息
+
