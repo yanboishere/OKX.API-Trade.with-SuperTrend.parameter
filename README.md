@@ -53,7 +53,7 @@ This experimental project is a personal learning project developed based on the 
 
 There are risks involved in using this project, which may result in financial losses and investment risks. The user should be aware of relevant laws, regulations, and market conditions and assume all consequences and responsibilities. The developer of this project is not responsible for any losses caused by the user's use of the project. The user should evaluate and decide whether to use the code of this project on their own.
 
-When using this project, please comply with the user agreement and relevant regulations of the OKEx platform, and pay attention to protecting personal information and account security. The developer of this project is not responsible for any consequences resulting from the violation of OKEx platform rules.
+When using this project, please comply with the user agreement and relevant regulations of the OKX platform, and pay attention to protecting personal information and account security. The developer of this project is not responsible for any consequences resulting from the violation of OKEx platform rules.
 
 Finally, the code of this project is for reference only and is not responsible for trading results. Users should evaluate risks and make investment decisions based on their own circumstances when using this project.
 
