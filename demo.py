@@ -12,6 +12,16 @@ secret_key = 'YOUR_SECRET_KEY'
 passphrase = 'YOUR_PASSPHRASE'
 
 # 交易参数
+
+"""
+`symbol`：您要交易的加密货币对，此处为BTC/USDT。
+`interval`：您要使用的K线时间间隔，此处为小时级别的K线。
+`quantity`：每次下单的数量，此处为1个BTC。
+`stop_loss_pct`：止损比例，当价格下跌到某个比例以下时会触发止损，此处设置为2%。
+`take_profit_pct`：止盈比例，当价格上涨到某个比例以上时会触发止盈，此处设置为2%。
+`leverage`：杠杆倍数，此处设置为10。
+"""
+
 symbol = 'btc-usdt'
 interval = '1h'
 quantity = 1
