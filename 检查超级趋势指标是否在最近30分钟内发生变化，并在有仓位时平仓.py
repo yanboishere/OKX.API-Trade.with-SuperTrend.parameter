@@ -58,7 +58,7 @@
         # 返回订单结果和上一次交易时间
         return order_result, last_trade_time
       
-# 然后，你可以修改主程序来跟踪上一次交易时间，并使用更新后的参数调用execute_trade_strategy方法：
+# 修改主程序来跟踪上一次交易时间，并使用更新后的参数调用execute_trade_strategy方法
 
 # 实例化OKXTrader类
 trader = OKXTrader(api_key, secret_key, passphrase)
