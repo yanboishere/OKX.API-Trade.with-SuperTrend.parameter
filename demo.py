@@ -1,4 +1,4 @@
-# 模拟盘代码
+# 导入相关库
 import okx.demo_account_api as account  # 使用模拟盘账户API
 import okx.demo_futures_api as future   # 使用模拟盘期货API
 import time
@@ -18,7 +18,6 @@ quantity = 1
 stop_loss_pct = 0.02
 take_profit_pct = 0.02
 leverage = 10
-
 
 
 class OKXTrader:
@@ -47,6 +46,14 @@ class OKXTrader:
             print(f'关闭API连接时发生错误: {e}')
 
     def get_historical_klines(self, symbol, interval, limit):
+        """
+        获取历史K线数据
+
+        :param symbol: 交易对
+        :param interval: K线周期
+        :param limit: 返回的K线数量
+        :return: 历史K线数据的时间、高价、低价和收盘价
+        """
         # 检查历史K线缓存是否已经存在该交易对的K线数据
         if symbol in self.historical_klines and interval in self.historical_klines[symbol]:
             times, high_prices, low_prices, close_prices = self.historical_klines[symbol][interval]
@@ -79,6 +86,18 @@ class OKXTrader:
 
     def calculate_super_trend(self, close_prices, period, multiplier, upper_bound=0, lower_bound=0, buy_signal=False,
                               sell_signal=False):
+        """
+        计算超级趋势指标
+
+        :param close_prices: 收盘价序列
+        :param period: ATR指标的时间窗口大小
+        :param multiplier: 计算上轨和下轨的倍数
+        :param upper_bound: 上轨列表，用于生成买入信号
+        :param lower_bound: 下轨列表，用于生成卖出信号
+        :param buy_signal: 是否生成买入信号
+        :param sell_signal: 是否生成卖出信号
+        :return: 返回新的上轨、下轨、买入信号和卖出信号
+        """
         try:
             # 计算ATR指标
             atr = talib.ATR(high_prices, low_prices, close_prices, timeperiod=period)
@@ -102,52 +121,89 @@ class OKXTrader:
 
         except Exception as e:
             # 发生错误时打印错误信息
-print(f'计算超级趋势时发生错误: {e}')
+            print(f'计算超级趋势时发生错误: {e}')
 
-    # 返回新的上轨、下轨、买入信号和卖出信号
-    return upper_bound, lower_bound, buy_signal, sell_signal
+        # 返回新的上轨、下轨、买入信号和卖出信号
+        return upper_bound, lower_bound, buy_signal, sell_signal
 
-def execute_trade_strategy(self, symbol, quantity, price, buy_signal, sell_signal, stop_loss_pct, take_profit_pct):
-    order_result = None
-    try:
-        # 获取当前仓位
-        position_data = self.future_api.get_demo_specific_position(symbol=symbol)  # 使用模拟盘API获取持仓信息
-        current_qty = int(position_data['holding'][0]['avail_qty'])
+    def execute_trade_strategy(self, symbol, quantity, price, buy_signal, sell_signal, stop_loss_pct, take_profit_pct):
+        """
+        执行交易策略
 
-        # 根据买入信号和卖出信号执行交易
-        if buy_signal and current_qty <= 0:
-            # 如果没有持仓，则开多单
-            order_data = self.future_api.take_demo_order(symbol=symbol, side='buy', price=price, qty=quantity,
-                                                         order_type='limit', match_price=False)  # 使用模拟盘API下单
+        :param symbol: 交易对
+        :param quantity: 下单数量
+        :param price: 下单价格
+        :param buy_signal: 是否买入信号
+        :param sell_signal: 是否卖出信号
+        :param stop_loss_pct: 止损比例
+        :param take_profit_pct: 止盈比例
+        :return: 订单结果
+        """
+        order_result = None
+        try:
+            # 获取当前仓位
+            position_data = self.future_api.get_demo_specific_position(symbol=symbol)  # 使用模拟盘API获取持仓信息
+            current_qty = int(position_data['holding'][0]['avail_qty'])
 
-        elif sell_signal and current_qty >= 0:
-            # 如果没有持仓，则开空单
-            order_data = self.future_api.take_demo_order(symbol=symbol, side='sell', price=price, qty=quantity,
-                                                         order_type='limit', match_price=False)
+            # 根据买入信号和卖出信号执行交易
+            if buy_signal and current_qty <= 0:
+                # 如果没有持仓，则开多单
+                order_data = self.future_api.take_demo_order(symbol=symbol, side='buy', price=price, qty=quantity,
+                                                             order_type='limit', match_price=False)  # 使用模拟盘API下单
 
-        elif current_qty > 0 and (stop_loss_pct > 0 or take_profit_pct > 0):
-            # 如果持有多头仓位，根据止损和止盈比例设置止损和止盈价格
-            last_trade_price = self.future_api.get_last_trade(symbol=symbol)['price']
-            stop_loss_price = round(last_trade_price * (1 - stop_loss_pct), 2)
-            take_profit_price = round(last_trade_price * (1 + take_profit_pct), 2)
+            elif sell_signal and current_qty >= 0:
+                # 如果没有持仓，则开空单
+                order_data = self.future_api.take_demo_order(symbol=symbol, side='sell', price=price, qty=quantity,
+                                                             order_type='limit', match_price=False)
 
-            # 更新止损和止盈价格
-            self.future_api.update_demo_order(symbol=symbol, order_id=order_result['order_id'],
-                                               stop_loss=str(stop_loss_price), take_profit=str(take_profit_price))
+            elif current_qty > 0 and (stop_loss_pct > 0 or take_profit_pct > 0):
+                # 如果持有多头仓位，根据止损和止盈比例设置止损和止盈价格
+                last_trade_price = self.future_api.get_last_trade(symbol=symbol)['price']
+                stop_loss_price = round(last_trade_price * (1 - stop_loss_pct), 2)
+                take_profit_price = round(last_trade_price * (1 + take_profit_pct), 2)
 
-        elif current_qty < 0 and (stop_loss_pct > 0 or take_profit_pct > 0):
-            # 如果持有空头仓位，根据止损和止盈比例设置止损和止盈价格
-            last_trade_price = self.future_api.get_last_trade(symbol=symbol)['price']
-            stop_loss_price = round(last_trade_price * (1 + stop_loss_pct), 2)
-            take_profit_price = round(last_trade_price * (1 - take_profit_pct), 2)
+                # 更新止损和止盈价格
+                self.future_api.update_demo_order(symbol=symbol, order_id=order_result['order_id'],
+                                                   stop_loss=str(stop_loss_price), take_profit=str(take_profit_price))
 
-            # 更新止损和止盈价格
-            self.future_api.update_demo_order(symbol=symbol, order_id=order_result['order_id'],
-                                               stop_loss=str(stop_loss_price), take_profit=str(take_profit_price))
+            elif current_qty < 0 and (stop_loss_pct > 0 or take_profit_pct > 0):
+                # 如果持有空头仓位，根据止损和止盈比例设置止损和止盈价格
+                last_trade_price = self.future_api.get_last_trade(symbol=symbol)['price']
+                stop_loss_price = round(last_trade_price * (1 + stop_loss_pct), 2)
+                take_profit_price = round(last_trade_price * (1 - take_profit_pct), 2)
 
-    except Exception as e:
-        # 发生错误时打印错误信息
-        print(f'执行交易策略时发生错误: {e}')
+                # 更新止损和止盈价格
+                self.future_api.update_demo_order(symbol=symbol, order_id=order_result['order_id'],
+                                                   stop_loss=str(stop_loss_price), take_profit=str(take_profit_price))
 
-    # 返回订单结果
-    return order_result
+        except Exception as e:
+            # 发生错误时打印错误信息
+            print(f'执行交易策略时发生错误: {e}')
+
+        # 返回订单结果
+        return order_result
+
+# 实例化OKXTrader类
+trader =OKXTrader(api_key, secret_key, passphrase)
+
+# 获取历史K线数据
+times, high_prices, low_prices, close_prices = trader.get_historical_klines(symbol, interval, limit=200)
+
+# 计算超级趋势指标
+upper_bound, lower_bound, buy_signal, sell_signal = trader.calculate_super_trend(close_prices, period=10, multiplier=3)
+
+# 执行交易策略
+if buy_signal or sell_signal:
+    # 获取最新成交价作为下单价格
+    price = float(trader.future_api.get_last_trade(symbol)['price'])
+
+    # 计算下单数量
+    account_data = trader.account_api.get_account_info()
+    available_balance = float(account_data['data'][0]['details']['available_balance'])
+    quantity = min(quantity, int(available_balance / price))
+
+    # 执行交易策略并打印订单结果
+    order_result = trader.execute_trade_strategy(symbol, quantity, price, buy_signal, sell_signal, stop_loss_pct, take_profit_pct)
+    print(f'执行交易策略，订单结果: {order_result}')
+else:
+    print('没有发出买入或卖出信号')
