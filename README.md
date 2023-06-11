@@ -26,7 +26,7 @@ pip install numpy
 pip install talib
 ```
 
-Please note that the talib library requires TA-Lib dependency library to be installed locally before it can run properly. You can download the corresponding binary file from the official website of TA-Lib (http://www.ta-lib.org/hdr_dw.html) according to your operating system and Python version, or refer to the GitHub repository of TA-Lib (https://github.com/mrjbq7/ta-lib) for source code compilation installation.
+Please note that the talib library requires TA-Lib dependency library to be installed locally before it can run properly. You can download the corresponding binary file from the official website of [TA-Lib] (http://www.ta-lib.org/hdr_dw.html) according to your operating system and Python version, or refer to the GitHub repository of [TA-Lib] (https://github.com/mrjbq7/ta-lib) for source code compilation installation.
 
 # Disclaimer
 
