@@ -1,6 +1,5 @@
-好的，那我为您添加一个计算过去K线波动率的函数，并在主函数中增加相关逻辑。请确认以下代码是否符合您的需求：
+# 添加一个计算过去K线波动率的函数，并在主函数中增加相关逻辑。
 
-```
 # 计算过去K线波动率
 def calculate_kline_volatility(close_prices, period):
     """
@@ -57,4 +56,3 @@ if kline_volatility > 0.002:
         print('没有发出买入或卖出信号')
 else:
     print('过去K线波动率小于0.2%，不开仓交易')
-```
