@@ -27,7 +27,7 @@ Experimental results on the simulation platform can be found in the 'Demo.py' fi
 - Instantiate the `OKXTrader` class and call the `get_historical_klines` function to obtain historical K-line data.
 - Call the `calculate_super_trend` function to calculate the super trend indicator and execute the trading strategy based on buy and sell signals. If there are buy or sell signals, obtain the latest trading price as the order price, calculate the order quantity, and call the `execute_trade_strategy` function to execute the transaction. If there are no buy or sell signals, output a message indicating that no buy or sell signals have been issued.
 
-# Libraries
+## Libraries
 
 You can use pip tool to install the libraries used in the code. Enter the following commands in the command line:
 
