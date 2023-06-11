@@ -24,6 +24,7 @@ You can use pip tool to install the libraries used in the code. Enter the follow
 ```
 pip install numpy
 pip install talib
+pip install python-okx
 ```
 
 Please note that the talib library requires TA-Lib dependency library to be installed locally before it can run properly. You can download the corresponding binary file from the official website of [TA-Lib] (http://www.ta-lib.org/hdr_dw.html) according to your operating system and Python version, or refer to the GitHub repository of [TA-Lib] (https://github.com/mrjbq7/ta-lib) for source code compilation installation.
