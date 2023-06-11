@@ -28,6 +28,14 @@ pip install talib
 
 Please note that the talib library requires TA-Lib dependency library to be installed locally before it can run properly. You can download the corresponding binary file from the official website of [TA-Lib] (http://www.ta-lib.org/hdr_dw.html) according to your operating system and Python version, or refer to the GitHub repository of [TA-Lib] (https://github.com/mrjbq7/ta-lib) for source code compilation installation.
 
+# Sponsor me. 
+
+## Bitcoin address 
+bc1q32mjead3kg0lx25yy9mcy9m8845zatvhcfvj92
+
+## Ethereum address
+0xBBc1fE874422F61fB135e72C3229Fffc3Cb266Fb.
+
 # Disclaimer
 
 This experimental project is a personal learning project developed based on the API interface provided by OKEx for trading cryptocurrencies, and is only used for academic research and personal experimental purposes.
