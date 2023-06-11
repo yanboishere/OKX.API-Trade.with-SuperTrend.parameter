@@ -1,5 +1,7 @@
 # OKX-API-Trade-with-SuperTrend-parameter
 
+超级趋势判断 自动化OKX api交易程序 
+
 个人实验项目
 
 因该仓库的内容还未经过长期测试确定其的可靠性 所以现阶段 建议您可以参考其学习 
