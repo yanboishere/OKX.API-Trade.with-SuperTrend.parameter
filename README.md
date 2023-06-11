@@ -45,9 +45,12 @@ Please note that the talib library requires TA-Lib dependency library to be inst
 
 [pypi-python-okx](https://pypi.org/project/python-okx/)
 
+[Yanbo | OKX-Python.Trading.Spot-Tutorial.Article-Chines](https://github.com/yanboishere/OKX-Python.Trading.Spot-Tutorial.Article-Chinese)
+
 [OKX Learn-Tutorials-Article | How to trade spot on a Jupyter Notebook: Pt. 1](https://www.okx.com/learn/spot-trading-with-jupyter-notebook)
 
 [OKX Learn-Tutorials-Article | How to trade derivatives on a Jupyter Notebook: Pt. 2](https://www.okx.com/learn/derivatives-trading-with-jupyter-notebook)
+
 
 
 ## Sponsor me. 
