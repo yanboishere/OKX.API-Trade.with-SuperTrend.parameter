@@ -2,7 +2,7 @@
 
 个人实验项目
 
-因该仓库的内容还未经过长期测试确定其的可靠性 所以现阶段建议您可以参考其学习 
+因该仓库的内容还未经过长期测试确定其的可靠性 所以现阶段 建议您可以参考其学习 
 
 <img width="121" alt="截屏2023-06-11 上午10 22 25" src="https://github.com/yanboishere/OKX.API-Trade.with-SuperTrend.parameter/assets/76860915/3abda6c3-d511-4f59-9767-621032ee35a1">
 
