@@ -57,6 +57,8 @@ Finally, the code of this project is for reference only and is not responsible f
 
 ![IMG_7FD989399B3F-1](https://github.com/yanboishere/OKX.API-Trade.with-SuperTrend.parameter/assets/76860915/0f880202-2c84-4e88-acad-336b8afe6d79)
 
+（Picture From Twitter）
+
 
 
 
