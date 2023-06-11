@@ -1,6 +1,8 @@
 # OKX-API-Trade-with-SuperTrend-parameter
 Personal experimental project
 
+**Since the content of this repository has not yet been tested over a long period of time to determine its reliability, it is recommended that at this stage you use it for learning purposes only.**
+
 <img width="121" alt="截屏2023-06-11 上午10 22 25" src="https://github.com/yanboishere/OKX.API-Trade.with-SuperTrend.parameter/assets/76860915/1c26ae3e-eb78-4efe-86c3-15f717cdfa75">
 
 
