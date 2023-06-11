@@ -44,5 +44,10 @@
 
 最后，本项目的代码仅供参考，不对交易结果负责。使用者在使用本项目时应根据自身状况进行风险评估和投资决策。 
 
+![IMG_7FD989399B3F-1](https://github.com/yanboishere/OKX.API-Trade.with-SuperTrend.parameter/assets/76860915/0f880202-2c84-4e88-acad-336b8afe6d79)
+
+（图片来源于 Twitter）
+
+
 ©️ Yanbo 2023
 
