@@ -1,6 +1,8 @@
 # OKX-API-Trade-with-SuperTrend-parameter
 
-超级趋势判断 自动化OKX api交易程序 
+## 超级趋势判断 自动化OKX api交易程序 
+
+### 包含 实盘 模拟盘 
 
 个人实验项目
 
