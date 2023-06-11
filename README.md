@@ -54,3 +54,11 @@ There are risks involved in using this project, which may result in financial lo
 When using this project, please comply with the user agreement and relevant regulations of the OKEx platform, and pay attention to protecting personal information and account security. The developer of this project is not responsible for any consequences resulting from the violation of OKEx platform rules.
 
 Finally, the code of this project is for reference only and is not responsible for trading results. Users should evaluate risks and make investment decisions based on their own circumstances when using this project.
+
+![IMG_7FD989399B3F-1](https://github.com/yanboishere/OKX.API-Trade.with-SuperTrend.parameter/assets/76860915/0f880202-2c84-4e88-acad-336b8afe6d79)
+
+
+
+
+
+
