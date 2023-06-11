@@ -41,8 +41,9 @@ Please note that the talib library requires TA-Lib dependency library to be inst
 
 ## Reference Links
 
-[OKX-Api](https://www.okx.com/docs-v5/zh/)
+[OKX-Api](https://www.okx.com/docs-v5/)
 
+[OKX-Api-Guide](https://www.okx.com/docs-v5/trick/)
 [pypi-python-okx](https://pypi.org/project/python-okx/)
 
 [Yanbo | OKX-Python.Trading.Spot-Tutorial.Article-Chines](https://github.com/yanboishere/OKX-Python.Trading.Spot-Tutorial.Article-Chinese)
