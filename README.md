@@ -1,26 +1,24 @@
 # OKX-API-Trade-with-SuperTrend-parameter
-个人实验项目
+Personal experimental project
 
-调用OKX API 
+Call the OKX API to confirm the process of appearance and disappearance of upper or lower limit lines for the super trend parameters in crypto trading pairs in TraderView, and perform multiple buying and selling transactions based on this parameter index.
 
-对于crypto交易对中 TraderView中的超级趋势参数 出现以及消失**上限线或下限线** 前后过程进行确认 
+Experimental results on the simulation platform can be found in the 'Demo.py' file. The code follows the following general process:
 
-从而根据该参数指标的出现 进行多次买卖
+- Import the necessary libraries and set API key information and transaction parameters.
+- Instantiate the `OKXTrader` class, initialize the account API and futures API, and historical K-line cache.
+- Define the `get_historical_klines` function to obtain historical K-line data and convert it into a numpy array. If the K-line data for the trading pair already exists in the cache, read directly from the cache; otherwise, use the API to obtain historical K-line data and save it to the cache.
+- Define the `calculate_super_trend` function to calculate the super trend indicator. The function accepts parameters such as the closing price sequence, the time window size of the ATR indicator, and the multiples used in calculating the upper and lower limits, and returns new upper and lower limits, buy signals, and sell signals.
+- Define the `execute_trade_strategy` function to execute the trading strategy. The function takes parameters such as the trading pair, order quantity, order price, buy signal, sell signal, stop loss ratio, and take profit ratio, and executes corresponding trading operations based on the current position and trading signal.
+- Instantiate the `OKXTrader` class and call the `get_historical_klines` function to obtain historical K-line data.
+- Call the `calculate_super_trend` function to calculate the super trend indicator and execute the trading strategy based on buy and sell signals. If there are buy or sell signals, obtain the latest trading price as the order price, calculate the order quantity, and call the `execute_trade_strategy` function to execute the transaction. If there are no buy or sell signals, output a message indicating that no buy or sell signals have been issued.
 
-模拟盘实验 请见 ‘Demo.py’ 文件
-    该代码可用于在OKE模拟盘上自动交易加密货币。它的大致流程如下：
-    
- - 导入必要的库和设置API密钥信息以及交易参数。
- 
- - 实例化`OKXTrader`类，并初始化账户API和期货API，以及历史K线缓存。
- 
- - 定义`get_historical_klines`函数，用于获取历史K线数据，并将其转换为numpy数组。如果缓存中已经存在该交易对的K线数据，则直接从缓存中读取；否则使用API获取历史K线数据，并将其保存到缓存中。
- 
- - 定义`calculate_super_trend`函数，用于计算超级趋势指标。该函数接受收盘价序列、ATR指标的时间窗口大小、计算上轨和下轨的倍数等参数，并返回新的上轨、下轨、买入信号和卖出信号。
+Disclaimer:
 
- - 定义`execute_trade_strategy`函数，用于执行交易策略。该函数接受交易对、下单数量、下单价格、买入信号、卖出信号、止损比例和止盈比例等参数，并根据当前仓位和交易信号执行相应的交易操作。
- 
- - 实例化`OKXTrader`类，并调用`get_historical_klines`函数获取历史K线数据。
- 
- - 调用`calculate_super_trend`函数计算超级趋势指标，并根据买入信号和卖出信号执行交易策略。如果存在买入或卖出信号，则获取最新成交价作为下单价格，计算下单数量并调用`execute_trade_strategy`函数执行交易。如果不存在买入或卖出信号，则输出信息提示没有发出买入或卖出信号。   
+This experimental project is a personal learning project developed based on the API interface provided by OKEx for trading cryptocurrencies, and is only used for academic research and personal experimental purposes.
 
+There are risks involved in using this project, which may result in financial losses and investment risks. The user should be aware of relevant laws, regulations, and market conditions and assume all consequences and responsibilities. The developer of this project is not responsible for any losses caused by the user's use of the project. The user should evaluate and decide whether to use the code of this project on their own.
+
+When using this project, please comply with the user agreement and relevant regulations of the OKEx platform, and pay attention to protecting personal information and account security. The developer of this project is not responsible for any consequences resulting from the violation of OKEx platform rules.
+
+Finally, the code of this project is for reference only and is not responsible for trading results. Users should evaluate risks and make investment decisions based on their own circumstances when using this project.
