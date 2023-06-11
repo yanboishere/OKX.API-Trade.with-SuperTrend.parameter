@@ -45,7 +45,7 @@ Please note that the talib library requires TA-Lib dependency library to be inst
 bc1q32mjead3kg0lx25yy9mcy9m8845zatvhcfvj92
 
 ## Ethereum address
-0xBBc1fE874422F61fB135e72C3229Fffc3Cb266Fb.
+0xBBc1fE874422F61fB135e72C3229Fffc3Cb266Fb
 
 # Disclaimer
 
