@@ -45,6 +45,11 @@ Please note that the talib library requires TA-Lib dependency library to be inst
 
 [pypi-python-okx](https://pypi.org/project/python-okx/)
 
+How to trade spot on a Jupyter Notebook: Pt. 1
+
+How to trade derivatives on a Jupyter Notebook: Pt. 2
+
+
 ## Sponsor me. 
 
 ### Bitcoin address 
