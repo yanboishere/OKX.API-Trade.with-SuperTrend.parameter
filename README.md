@@ -1,6 +1,10 @@
 # OKX-API-Trade-with-SuperTrend-parameter
 Personal experimental project
 
+<img width="121" alt="截屏2023-06-11 上午10 22 25" src="https://github.com/yanboishere/OKX.API-Trade.with-SuperTrend.parameter/assets/76860915/1c26ae3e-eb78-4efe-86c3-15f717cdfa75">
+
+
+
 Call the OKX API to confirm the process of appearance and disappearance of upper or lower limit lines for the super trend parameters in crypto trading pairs in TraderView, and perform multiple buying and selling transactions based on this parameter index.
 
 Experimental results on the simulation platform can be found in the 'Demo.py' file. The code follows the following general process:
