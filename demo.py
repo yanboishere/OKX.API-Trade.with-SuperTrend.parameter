@@ -1,8 +1,24 @@
 # 模拟盘代码
 import okx.demo_account_api as account  # 使用模拟盘账户API
 import okx.demo_futures_api as future   # 使用模拟盘期货API
+import time
 import numpy as np
 import talib
+
+
+# API密钥信息
+api_key = 'YOUR_API_KEY'
+secret_key = 'YOUR_SECRET_KEY'
+passphrase = 'YOUR_PASSPHRASE'
+
+# 交易参数
+symbol = 'btc-usdt'
+interval = '1h'
+quantity = 1
+stop_loss_pct = 0.02
+take_profit_pct = 0.02
+leverage = 10
+
 
 
 class OKXTrader:
