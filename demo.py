@@ -20,6 +20,7 @@ passphrase = 'YOUR_PASSPHRASE'
 `stop_loss_pct`：止损比例，当价格下跌到某个比例以下时会触发止损，此处设置为2%。
 `take_profit_pct`：止盈比例，当价格上涨到某个比例以上时会触发止盈，此处设置为2%。
 `leverage`：杠杆倍数，此处设置为10。
+当然，你也可以自行调整该参数
 """
 
 symbol = 'btc-usdt'
