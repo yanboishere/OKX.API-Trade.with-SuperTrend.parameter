@@ -6,6 +6,7 @@
 
 <img width="121" alt="截屏2023-06-11 上午10 22 25" src="https://github.com/yanboishere/OKX.API-Trade.with-SuperTrend.parameter/assets/76860915/3abda6c3-d511-4f59-9767-621032ee35a1">
 
+
 调用OKX API 
 
 对于crypto交易对中 TraderView中的超级趋势参数 出现以及消失**上限线或下限线** 前后过程进行确认 
