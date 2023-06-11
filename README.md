@@ -17,7 +17,18 @@ Experimental results on the simulation platform can be found in the 'Demo.py' fi
 - Instantiate the `OKXTrader` class and call the `get_historical_klines` function to obtain historical K-line data.
 - Call the `calculate_super_trend` function to calculate the super trend indicator and execute the trading strategy based on buy and sell signals. If there are buy or sell signals, obtain the latest trading price as the order price, calculate the order quantity, and call the `execute_trade_strategy` function to execute the transaction. If there are no buy or sell signals, output a message indicating that no buy or sell signals have been issued.
 
-Disclaimer:
+# Libraries
+
+You can use pip tool to install the libraries used in the code. Enter the following commands in the command line:
+
+```
+pip install numpy
+pip install talib
+```
+
+Please note that the talib library requires TA-Lib dependency library to be installed locally before it can run properly. You can download the corresponding binary file from the official website of TA-Lib (http://www.ta-lib.org/hdr_dw.html) according to your operating system and Python version, or refer to the GitHub repository of TA-Lib (https://github.com/mrjbq7/ta-lib) for source code compilation installation.
+
+# Disclaimer
 
 This experimental project is a personal learning project developed based on the API interface provided by OKEx for trading cryptocurrencies, and is only used for academic research and personal experimental purposes.
 
