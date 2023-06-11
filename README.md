@@ -43,6 +43,8 @@ Please note that the talib library requires TA-Lib dependency library to be inst
 
 [OKX-Api](https://www.okx.com/docs-v5/zh/)
 
+[pypi-python-okx](https://pypi.org/project/python-okx/)
+
 ## Sponsor me. 
 
 ### Bitcoin address 
