@@ -34,6 +34,38 @@
  
  - 调用`calculate_super_trend`函数计算超级趋势指标，并根据买入信号和卖出信号执行交易策略。如果存在买入或卖出信号，则获取最新成交价作为下单价格，计算下单数量并调用`execute_trade_strategy`函数执行交易。如果不存在买入或卖出信号，则输出信息提示没有发出买入或卖出信号。 
 
+# demo.py 虚拟盘转为实盘 注意事项
+在将虚拟盘交易转为实盘交易之前，需要先进行以下步骤：
+
+1.确认API Key、Secret Key和Passphrase的权限是否足够进行实盘交易，并且确保账户有足够的资金用于交易。
+
+修改代码中的初始化部分，将 self.future_api 和 self.account_api 的第四个参数 True 改为 False，以开启真实交易模式。例如：
+
+    self.account_api = account.AccountAPI(api_key, secret_key, passphrase, False)
+    self.future_api = future.FutureAPI(api_key, secret_key, passphrase, False)
+2.在执行交易策略时，需要使用真实的价格和数量信息，并且在下单时注意设置正确的委托类型和杠杆倍数。例如：
+
+    # 如果没有持仓，则开多单
+    order_data = self.future_api.take_order(symbol=symbol, side='buy', price=price, qty=quantity,
+                                            order_type='limit', match_price=False, leverage=10)
+    
+    # 如果没有持仓，则开空单
+    order_data = self.future_api.take_order(symbol=symbol, side='sell', price=price, qty=quantity,
+                                            order_type='limit', match_price=False, leverage=10)
+                                            
+3.在更新止损或止盈价格时，需要使用实际的价格而不是相对价格，并且需要注意价格精度和交易所规定的最小变动单位。例如：
+
+    # 根据止损和止盈比例设置止损和止盈价格
+    last_trade_price = float(self.future_api.get_last_trade(symbol=symbol)['price'])
+    stop_loss_price = round(last_trade_price * (1 - stop_loss_pct), 2)
+    take_profit_price = round(last_trade_price * (1 + take_profit_pct), 2)
+
+    # 更新止损和止盈价格
+    self.future_api.update_order(symbol=symbol, order_id=order_result['order_id'],
+                             stop_loss=str(stop_loss_price), take_profit=str(take_profit_price))
+
+4.在进行实盘交易之前，建议先进行模拟交易或使用小额资金进行测试，确保代码的正确性和交易策略的有效性。同时要注意风险管理，设置合理的止损和止盈规则，避免不必要的亏损。
+
 # 免责声明：
 
 本实验项目是基于OKX提供的API接口进行开发并对加密货币进行交易的个人学习项目，仅用于学术研究和个人实验目的。
