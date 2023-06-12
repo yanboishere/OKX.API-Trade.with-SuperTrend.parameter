@@ -1,4 +1,8 @@
 # OKX-API-Trade-with-SuperTrend-parameter
+
+## Language
+English | [Chinese]()
+
 Personal experimental project
 
 **Since the content of this repository has not yet been tested over a long period of time to determine its reliability, it is recommended that at this stage you use it for learning purposes only.**
