@@ -82,7 +82,9 @@
 
     self.account_api = account.AccountAPI(api_key, secret_key, passphrase, False)
     self.future_api = future.FutureAPI(api_key, secret_key, passphrase, False)
-## 2.在执行交易策略时，需要使用真实的价格和数量信息，并且在下单时注意设置正确的委托类型和杠杆倍数。例如：
+## 2.在执行交易策略时，需要使用真实的价格和数量信息，并且在下单时注意设置正确的委托类型和杠杆倍数。
+
+例如：
 
     # 如果没有持仓，则开多单
     order_data = self.future_api.take_order(symbol=symbol, side='buy', price=price, qty=quantity,
