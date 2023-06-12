@@ -10,6 +10,7 @@
 
 <img width="121" alt="截屏2023-06-11 上午10 22 25" src="https://github.com/yanboishere/OKX.API-Trade.with-SuperTrend.parameter/assets/76860915/3abda6c3-d511-4f59-9767-621032ee35a1">
 
+## 简介
 
 调用OKX API 
 
@@ -18,6 +19,8 @@
 从而根据该参数指标的出现 进行多次买卖
 
 ---
+
+红色长期趋势粗线是看跌信号，绿色是看涨信号。
 
 <img width="1030" alt="244910477-fc0a79a5-9a17-4765-a180-16d8b31470ea" src="https://github.com/yanboishere/OKX.API-Trade.with-SuperTrend.parameter/assets/76860915/5c337cdb-64be-4cb0-85f3-5146d610a656">
 
