@@ -76,6 +76,8 @@ by KivancOzbilgic
         alertcondition(sellSignal, title="SuperTrend Sell", message="SuperTrend Sell!")
         changeCond = trend != trend[1]
         alertcondition(changeCond, title="SuperTrend Direction Change", message="SuperTrend has changed direction!")
+        
+其详细原理 请见：[How.SuperTrend.code.works_cn.md](https://github.com/yanboishere/OKX.API-Trade.with-SuperTrend.parameter/blob/master/How.SuperTrend.code.works_cn.md)
 
 
 ---
