@@ -22,6 +22,8 @@
 
 红色长期趋势粗线是看跌信号，绿色是看涨信号。
 
+（该趋势线为实时趋势 随着K线走向而实时产生）
+
 <img width="1030" alt="244910477-fc0a79a5-9a17-4765-a180-16d8b31470ea" src="https://github.com/yanboishere/OKX.API-Trade.with-SuperTrend.parameter/assets/76860915/5c337cdb-64be-4cb0-85f3-5146d610a656">
 
 （本仓库成立前 该指标在近3天中的表现情况 BTC-USD）
