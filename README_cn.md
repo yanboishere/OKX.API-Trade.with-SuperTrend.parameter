@@ -17,6 +17,15 @@
 
 从而根据该参数指标的出现 进行多次买卖
 
+
+<img width="1030" alt="244910477-fc0a79a5-9a17-4765-a180-16d8b31470ea" src="https://github.com/yanboishere/OKX.API-Trade.with-SuperTrend.parameter/assets/76860915/5c337cdb-64be-4cb0-85f3-5146d610a656">
+
+<img width="1025" alt="截屏2023-06-12 下午9 02 24" src="https://github.com/yanboishere/OKX.API-Trade.with-SuperTrend.parameter/assets/76860915/a95229f6-b578-4eb9-81b6-e04324d59a9c">
+
+
+@TradingView
+
+
 模拟盘实验 请见 ‘Demo.py’ 文件
     该代码可用于在OKE模拟盘上自动交易加密货币。它的大致流程如下：
     
