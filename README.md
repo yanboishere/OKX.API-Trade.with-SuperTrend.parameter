@@ -1,7 +1,7 @@
 # OKX-API-Trade-with-SuperTrend-parameter
 
 ## Language
-English | [Chinese](https://github.com/yanboishere/OKX.API-Trade.with-SuperTrend.parameter/blob/master/README_cn.md)
+English | [中文](https://github.com/yanboishere/OKX.API-Trade.with-SuperTrend.parameter/blob/master/README_cn.md)
 
 Personal experimental project
 
