@@ -1,4 +1,4 @@
-# OKX-API-Trade-with-SuperTrend-parameter
+# OKX.API-Trade-with-SuperTrend-parameter
 
 ## 超级趋势判断 自动化OKX api交易程序 
 
